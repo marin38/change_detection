@@ -1,4 +1,7 @@
 from keras import backend as K
+
+smooth = 1e-12
+
 def jaccard_loss(y_true, y_pred):
     smooth = 0.001
     intersection = K.sum(y_true * y_pred, axis=[0, 1, 2])
